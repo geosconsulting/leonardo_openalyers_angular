@@ -1,0 +1,25 @@
+<div class="col">
+  <div class="btn-toolbar">
+    <div class="col-8">
+      <label for="user-list">Users</label>
+        <select #users id="user-list" class="form-select" (change)="onSelected(users.value)" required>
+          <option *ngFor="let user of geoserver_users" [value]="user" >
+            {{user}}
+          </option>
+        </select>
+    </div>
+    <!--
+    <div class="col-3">
+      <h4>User is now {{selectedUser}}</h4>
+    </div>
+    -->
+    <div class="col-4">
+      <div class="btn btn-primary" (click)="onFetchUserLayers(selectedUser)">Fetch Layers for {{selectedUser}}</div>
+    </div>
+  </div>
+</div>
+<div *ngFor="let layer of layers | keyvalue">
+  Layers: <b>{{layer.value}}</b>
+  <!-- Workspace: <b>{{item.key}}</b> <br /> -->
+</div>
+

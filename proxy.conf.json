@@ -1,0 +1,10 @@
+{
+  "/layers": {
+    "target": "http://localhost:8000/layers",
+    "secure": false,
+    "pathRewrite": {
+      "^/layers": ""
+    },
+    "changeOrigin": true
+  }
+}
